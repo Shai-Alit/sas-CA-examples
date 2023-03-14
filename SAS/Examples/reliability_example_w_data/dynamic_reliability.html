@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Return Reliability Output</title>
+
+<!-- link to SAS job execution stylesheet -->
+<link rel="stylesheet" href="/SASJobExecution/theme">
+</head>
+
+<!-- body of the form -->
+<body role="main" class="jobexec_body">
+
+<!-- include sas job execution. Here you can also specify to open actions in a new tab or window. -->
+<form class="jobexec_form" action="/SASJobExecution/" target="_tab">
+<input type="hidden" name="_program" value="$PROGRAM$"/>
+<input type="hidden" name="_action"  value="execute"/>
+<div class="jobexec_sample_header">SAS<sup>&#174;</sup> Job Execution</div>
+
+<h1 class="jobexec_sample_name">Return Reliability Output</h1>
+
+<p>
+Pseudo-stress S-N plot with probability distributions for a metal alloy.
+</p>
+
+<!-- select dropdown for distribution -->
+<label for="_distribution">Distribution:</label>
+<select name="_distribution" id="_distribution" class="jobexec_sample_select">
+<option value="LOGNORMAL10">Lognormal (base 10)</option>
+<option value="LOGNORMAL">Lognormal (base e)</option>
+<option value="WEIBULL">Weibull</option>  
+<option value="BINOMIAL">Binomial</option>
+  <option value="LOGISTIC">Logistic</option>
+
+</select>
+
+
+<!-- build additional select dropdowns manually-->
+
+<label for="_output_type">Graph Template:</label>
+<select name="_graph_template" id="_graph_template" class="jobexec_sample_select">
+  <option value="default">default</option>
+  <option value="axis_flip">Custom (Axis Flip)</option>
+</select>
+
+
+<label for="_output_type">Output format:</label>
+<select name="_output_type" id="_output_type" class="jobexec_sample_select">
+  <option value="ods_html5">HTML5</option>
+  <option value="ods_pdf">Portable Document Format (PDF)</option>
+  <option value="ods_rtf">Rich Text Format (RTF)</option>
+</select>
+
+<br/>
+<br/>
+
+<label for="_suppress_tabular">Suppress Tabular Output? </label>
+<select name="_suppress_tabular" id="_suppress_tabular" class="jobexec_sample_select">
+  <option value="yes">yes</option>
+  <option value="no">no</option>
+</select>
+
+<br/>
+<br/>
+
+<label for="_ods_device">Graphic image format:</label>
+<select name="_ods_device" id="_ods_device" class="jobexec_sample_select">
+  <option value="" selected>(default based on output format)</option>
+  <option value="svg">SVG</option>
+  <option value="png">PNG</option>
+</select>
+
+<br/>
+<br/>
+
+<label for="_odsstyle">ODS style:</label>
+<select name="_odsstyle" id="_odsstyle" class="jobexec_sample_select">
+  <option value="">(default)</option>
+  <option value="Analysis">Analysis</option>
+  <option value="BarrettsBlue">BarrettsBlue</option>
+  <option value="DTree">DTree</option>
+  <option value="Daisy">Daisy</option>
+  <option value="Default">Default</option>
+  <option value="Dove">Dove</option>
+  <option value="EGDefault">EGDefault</option>
+  <option value="Excel">Excel</option>
+  <option value="FancyPrinter">FancyPrinter</option>
+  <option value="Festival">Festival</option>
+  <option value="FestivalPrinter">FestivalPrinter</option>
+  <option value="Gantt">Gantt</option>
+  <option value="GrayscalePrinter">GrayscalePrinter</option>
+  <option value="HTMLBlue" selected>HTMLBlue</option>
+  <option value="HTMLEncore">HTMLEncore</option>
+  <option value="Harvest">Harvest</option>
+  <option value="HighContrast">HighContrast</option>
+  <option value="HighContrastLarge">HighContrastLarge</option>
+  <option value="Journal">Journal</option>
+  <option value="Journal1a">Journal1a</option>
+  <option value="Journal2">Journal2</option>
+  <option value="Journal2a">Journal2a</option>
+  <option value="Journal3">Journal3</option>
+  <option value="Journal3a">Journal3a</option>
+  <option value="Listing">Listing</option>
+  <option value="Meadow">Meadow</option>
+  <option value="MeadowPrinter">MeadowPrinter</option>
+  <option value="Minimal">Minimal</option>
+  <option value="MonochromePrinter">MonochromePrinter</option>
+  <option value="Monospace">Monospace</option>
+  <option value="Moonflower">Moonflower</option>
+  <option value="Netdraw">Netdraw</option>
+  <option value="NoFontDefault">NoFontDefault</option>
+  <option value="Normal">Normal</option>
+  <option value="NormalPrinter">NormalPrinter</option>
+  <option value="Ocean">Ocean</option>
+  <option value="Pearl">Pearl</option>
+  <option value="PearlJ">PearlJ</option>
+  <option value="Plateau">Plateau</option>
+  <option value="PowerPointDark">PowerPointDark</option>
+  <option value="PowerPointLight">PowerPointLight</option>
+  <option value="Printer">Printer</option>
+  <option value="Raven">Raven</option>
+  <option value="Rtf">Rtf</option>
+  <option value="Sapphire">Sapphire</option>
+  <option value="SasDocPrinter">SasDocPrinter</option>
+  <option value="SasWeb">SasWeb</option>
+  <option value="Seaside">Seaside</option>
+  <option value="SeasidePrinter">SeasidePrinter</option>
+  <option value="Snow">Snow</option>
+  <option value="StatDoc">StatDoc</option>
+  <option value="Statistical">Statistical</option>
+  <option value="vaDark">vaDark</option>
+  <option value="vaHighContrast">vaHighContrast</option>
+  <option value="vaLight">vaLight</option>
+</select>
+
+<br/>
+<br/>
+
+<hr/>
+
+<!-- buttons with SAS classes for executing code -->
+<input type="submit" value="Run code" class="jobexec_sample_input_submit"/>
+<input type="checkbox" name="_debug" id="_debug" value="log" class="jobexec_sample_input_checkbox"/><label for="_debug">Show SAS Log</label>
+
+</form>
+
+</body>
+
+</html>

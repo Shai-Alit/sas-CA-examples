@@ -1,0 +1,30 @@
+1) create a new job definition 
+	new -> Job -> Definition
+	save job as transistor_example
+2) code
+	in code window, copy code from dynamic_reliability.sas to code section. 
+	save
+3) set up form
+	click on "associate a form" button on right tool pane
+	select HTML
+	copy code from dynamic_reliability.html to html section
+	save
+4) set up parameters
+	click "Job properties" button on right tool pane and add/update parameters with the following values
+ 
+	Name			field type	default value
+	_action			Character	form,prompts,execute
+	_output_type		Character	ods_html5
+	_odsstyle		Character	HTMLBlue
+	_ods_device		Character	png
+	_contextName		Character	SAS Studio compute context
+	_distribution		Character	
+	_graph_template		Character	default
+	_suppress_tabular	Character	yes
+	_debug			Character	log
+
+
+	save
+
+5) test by clicking the play button
+ 

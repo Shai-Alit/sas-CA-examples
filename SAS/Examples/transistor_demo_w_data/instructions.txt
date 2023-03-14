@@ -1,0 +1,43 @@
+1) load data
+	load capout.sashdat and put in-memory (keep track of the location)
+	load transistor_summary.csv and put in-memory (keep track of the location)
+	place transistor_samples.csv in location the server that Viya can access
+
+2) create a new job definition (no prompt) and copy code from transistor_demo.sas to code section. 
+	modify line 43 with location of transistor_samples.csv 
+	modify line 103, 1112, 113, 115, 116 with location of caslib
+	save job as transistor_example
+3) Run the job in SAS Studio
+	with he transistor_example job open in SAS studio
+	click the run button
+4) Run the job from web browswer
+	get the job link
+		Open the job transistor_example in SAS studio
+		click on job properties and scroll to "Job Submit" section. 
+		copy the URL
+	paste the link into a web browser and hit enter
+ 
+
+
+Optional - dynamic VA report
+
+1) create VA report
+	In Viya go to Explore and Visualize
+	create a new report
+	add data sources from transistor_summary and capout that was loaded in step 1 above
+	add desired data objects such as listbox or scatterplot associated to the capout data source
+	save	
+2) get the job link
+	Open the job "transistor_example"
+	click on job properties and scroll to "Job Submit" section. 
+	copy the URL
+3) back in the VA report
+	add a text object
+	double click to edit, and then select the hyperlink button
+	provide a name and past the URL copied in step 2
+	in the options for the entire report, enable the "periodically reload report data" checkox
+	set desired update interval
+	save
+4) click the link and verify the job runs and that the data object updates. 
+
+
