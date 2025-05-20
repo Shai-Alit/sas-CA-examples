@@ -1,0 +1,9 @@
+command:
+touch ~/.ssh/config
+
+file contents:
+Host github.com
+        User git
+        Hostname github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/id_ecdsa
