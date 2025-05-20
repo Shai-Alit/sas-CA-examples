@@ -1,6 +1,6 @@
 #!/bin/sh
-#STEP 1: put this code in a terminal -> chmod -R 777 setup.sh
-#STEP 2: type in the terminal -> ./setup.sh
+#STEP 1: copy and paste this code in a terminal -> chmod -R 777 setup.sh
+#STEP 2: copy and paste in the terminal -> ./setup.sh
 
 mkdir $WORKSPACE/sasfiles
 mkdir $WORKSPACE/data
