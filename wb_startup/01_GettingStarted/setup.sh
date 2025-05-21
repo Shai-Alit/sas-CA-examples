@@ -12,7 +12,7 @@ git -C $WORKSPACE/github clone https://github.com/sassoftware/sas-viya-workbench
 git -C $WORKSPACE/github clone https://github.com/Shai-Alit/sas-CA-examples.git
 
 #copy over autoexec
-cp $WORKSPACE/github/sas-CA-examples/01_GettingStarted/autoexec.sas /home/sas/autoexec.sas
+cp $WORKSPACE/github/sas-CA-examples/wb_startup/01_GettingStarted/autoexec.sas /home/sas/autoexec.sas
 
 #install python requirements
-pip install -r $WORKSPACE/github/sas-CA-examples/01_GettingStarted/requirements.txt
+pip install -r $WORKSPACE/github/sas-CA-examples/wb_startup/01_GettingStarted/requirements.txt
