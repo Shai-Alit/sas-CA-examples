@@ -1,0 +1,36 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "sasjs-for-vscode.isLocal": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "SAS.connectionProfiles": {
+
+        "activeProfile": "Verde",
+        "profiles": {
+            "Innov": {
+                "connectionType": "rest",
+                "endpoint": "https://innovationlab.demo.sas.com"
+            },
+            "Verde": {
+                "connectionType": "rest",
+                "endpoint": "https://verde-viya.mtes-tt.unx.sas.com",
+                "autoExec": [
+                    {
+                        "type": "file",
+                        "filePath": "C:/Users/seford/autoexec.sas"
+                    }
+                ]
+            }
+        }
+    },
+    "python.analysis.extraPaths": [],
+    "aws.suppressPrompts": {
+        "minIdeVersion": true
+    },
+    "editor.inlineSuggest.showToolbar": "always",
+    "SAS.results.html.custom.style": {
+        
+    }
+}
