@@ -1,5 +1,6 @@
 /*
-autoexec to execute for VS Code SAS extension for connection to Verde.
+autoexec to execute for VS Code SAS extension for connection to 
+internal SAS Verde environment.
 */
 
 *set sas options for the session;
