@@ -5,9 +5,13 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 import xgboost
 import pickle
 
+#input_table = 'SASHELP.BASEBALL' # if running in Viya
 input_table = './Data/baseball.csv'
+
+#pickle_loc = '/mnt/mtes-tt-file-share/data/P_FORD/py_models' # if running in Viya
 pickle_loc = './models/baseball'
 
+#df = SAS.sd2df(input_table) #if running in Viya
 df = pd.read_csv(input_table)
 
 #drop rows with missing data
