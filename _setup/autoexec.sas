@@ -1,6 +1,10 @@
 /*
 autoexec to execute for VS Code SAS extension for connection to 
+<<<<<<< Local
 internal SAS Verde environment.
+=======
+SAS internal Verde demo environment.
+>>>>>>> Remote
 */
 
 *set sas options for the session;
