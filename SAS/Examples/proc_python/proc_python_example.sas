@@ -6,43 +6,77 @@ sean.ford@sas.com
 
 */
 
-some sas code
+*%let userid = &SYSUSERID;
 
-proc python code
-
-
-
-talk about submit vs terminate
+*get the user's home directory;
+%let user_home = %SYSGET(HOME);
+%put &user_home;
 
 
-/*use python so that the html responses can be properly 
-formatted to print nicely in the email.*/
+
+/*user proc python to do some processing
+note that using terminate ensures that a clean python session is started
+to use any previously initialized python session, ommit the "terminate" statement
+*/
 proc python terminate;
 submit;
-SAS.hideLOG(False)
-import markdown;
 
-#use SAS to get data set created above
-df = SAS.sd2df('WORK.llm_temp')
+#import the pandas package
+import pandas as pd
 
-full_html = ''
+print(f"The user's home directory is: {SAS.symget('user_home')}")
 
-#generate html for each response and add it to the html that's being built
-for i,r_i in df.iterrows():
-    html_body = markdown.markdown(r_i['response'],extensions=['extra','sane_lists'],output_format='html5')
-    if "account_name" in r_i.index:
-        full_html = full_html + f' <h2>{r_i["account_name"]}</h2><br>' + html_body + '<br><br>'
-    else:
-        full_html = full_html + f' <h2>{r_i["sas_sltn"]} v {r_i["competitor"]}</h2><br>' + html_body + '<br><br>'
+#use SAS to get connected snowflake library data
+df = SAS.sd2df('snowlib.cars')
 
-#finish up the html
-# note - going line by line because I think the SAS interpreter does not like mixing f strings, ''', and "
-full_html = full_html + '<p style="margin-top: 30px; font-size: 12px; color: #666;">' 
-full_html = full_html + 'Generated on ' + __import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M')
-full_html = full_html + '</p></body></html>'
+# Get the row with highest MSRP
+max_msrp_row = df.loc[df['MSRP'].idxmax()]
 
-#assign the html code as a SAS macro variable so we can use it in the email
-SAS.symput('full_html',full_html)
+print("\n=== Vehicle with the highest MSRP ===")
+print(max_msrp_row)
+
+# Safely get the Model
+highest_model = max_msrp_row['Model']      # or .get('Model')
+
+print(f"\nHighest Model: {highest_model}")
+
+#save the model to a variable that SAS can access
+SAS.symput('vehicle_model',highest_model)
+
+#get the 'expensive' cars
+expensive_cars = df[df['MSRP'] > 100000].sort_values(by='MSRP', ascending=False)
+
+#save the row to a SAS table
+SAS.df2sd(expensive_cars,'work.expensive_cars')
 
 endsubmit;
 quit;
+
+%put From python, the most expensive vehicle model is a &vehicle_model;
+
+/* Create a nice label with Make + Model */
+data plotdata;
+    set work.expensive_cars;
+    ModelLabel = catx(" - ", Make, Model);
+run;
+
+title "Most Expensive Cars (MSRP > $150,000)";
+title2 "Sorted by Price Descending";
+
+proc sgplot data=plotdata;
+    hbar ModelLabel / 
+         response=MSRP 
+         categoryorder=respdesc          /* highest to lowest */
+         datalabel 
+         datalabelattrs=(size=11 weight=bold)
+         fillattrs=graphdata1
+         barwidth=0.7;
+
+    xaxis label="MSRP (USD)" 
+          grid
+          valuesformat=dollar12.; 
+
+    yaxis label="Vehicle Model" 
+          display=(nolabel);
+
+run;
