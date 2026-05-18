@@ -5,6 +5,9 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 import xgboost
 import pickle
 
+#flag to save the models
+SAVE_MODELS = false
+
 #input_table = 'SASHELP.BASEBALL' # if running in Viya
 input_table = './Data/baseball.csv'
 
@@ -74,11 +77,14 @@ preds = model.predict(xgb_test)
 accuracy= r2_score(y_test,preds)
 print('Accuracy of the model is:', accuracy*100)
 
-#pickle the scaler
-pickle.dump(scaler, open(pickle_loc + '/scaler.pkl', 'wb'))
 
-#pickle the encoder
-pickle.dump(ohe, open(pickle_loc + '/encoder.pkl', 'wb'))
+if SAVE_MODELS:
 
-#pickle the model
-pickle.dump(model, open(pickle_loc + '/XGBmodel.pickle', 'wb'))
+    #pickle the scaler
+    pickle.dump(scaler, open(pickle_loc + '/scaler.pkl', 'wb'))
+
+    #pickle the encoder
+    pickle.dump(ohe, open(pickle_loc + '/encoder.pkl', 'wb'))
+
+    #pickle the model
+    pickle.dump(model, open(pickle_loc + '/XGBmodel.pickle', 'wb'))
