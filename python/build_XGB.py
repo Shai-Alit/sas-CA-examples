@@ -6,7 +6,7 @@ import xgboost
 import pickle
 
 #flag to save the models
-SAVE_MODELS = false
+SAVE_MODELS = False
 
 #input_table = 'SASHELP.BASEBALL' # if running in Viya
 input_table = './Data/baseball.csv'
