@@ -37,8 +37,10 @@ import pandas as pd
 print(f"Running python code inside SAS Code for user {SAS.symget('SYSUSERID')}")
 print(f"The user's home directory is: {SAS.symget('user_home')}")
 
+#get the sas variable containing the library that contains the cars data
 saslib = SAS.symget('lib')
-#use SAS to get connected snowflake library data
+
+#use SAS to get connected library data
 df = SAS.sd2df(f'{saslib}.cars')
 
 # Get the row with highest MSRP
