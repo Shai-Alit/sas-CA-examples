@@ -52,7 +52,7 @@ print(max_msrp_row)
 # Safely get the Model
 highest_model = max_msrp_row['Model']      # or .get('Model')
 
-print(f"\nHighest Model: {highest_model}")
+print(f"\nHighest MSRP Model: {highest_model}")
 
 #save the model to a variable that SAS can access
 SAS.symput('vehicle_model',highest_model)
