@@ -13,7 +13,16 @@ sean.ford@sas.com
 %let user_home = %SYSGET(HOME);
 %put &user_home;
 
+*attempt to use snowflake library;
+%let lib = snowlib;
 
+*check if snowflake library exists. if not, use sashelp;
+%if %sysfunc(libref(&lib)) = 0 %then %do;
+    %put NOTE: Library &lib is assigned.;
+%end;
+%else %do;
+    %let lib=sashelp;
+%end;
 
 /*user proc python to do some processing
 note that using terminate ensures that a clean python session is started
@@ -28,8 +37,9 @@ import pandas as pd
 print(f"Running python code inside SAS Code for user {SAS.symget('SYSUSERID')}")
 print(f"The user's home directory is: {SAS.symget('user_home')}")
 
+saslib = SAS.symget('lib')
 #use SAS to get connected snowflake library data
-df = SAS.sd2df('snowlib.cars')
+df = SAS.sd2df(f'{saslib}.cars')
 
 # Get the row with highest MSRP
 max_msrp_row = df.loc[df['MSRP'].idxmax()]
