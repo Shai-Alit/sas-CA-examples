@@ -1,0 +1,20 @@
+{
+    "name": "dtc",
+    "description": "SKLearn Decision Tree Model",
+    "scoreCodeType": "python",
+    "trainTable": "cas-shared-default/Public/DTC_TRAIN_DATA",
+    "trainCodeType": "Python",
+    "algorithm": "Decision Tree",
+    "function": "classification",
+    "targetVariable": "GE50K",
+    "targetEvent": "1",
+    "targetLevel": "Binary",
+    "eventProbVar": "P_1",
+    "modeler": "sean.ford@sas.com",
+    "tool": "Python 3",
+    "toolVersion": "3.11.13",
+    "properties": [],
+    "eventPercentage": "0.24498782572657",
+    "selectionStatistic": "_KS_",
+    "selectionStatisticValue": "1.0"
+}

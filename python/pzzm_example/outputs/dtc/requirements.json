@@ -1,0 +1,10 @@
+[
+    {
+        "step": "install scikit-learn",
+        "command": "pip install scikit-learn==1.7.2"
+    },
+    {
+        "step": "install numpy",
+        "command": "pip install numpy==2.4.4"
+    }
+]

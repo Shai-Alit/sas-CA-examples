@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Age",
+        "level": "interval",
+        "type": "decimal",
+        "length": 8
+    },
+    {
+        "name": "WorkClass",
+        "level": "nominal",
+        "type": "string",
+        "length": 16
+    },
+    {
+        "name": "Education",
+        "level": "nominal",
+        "type": "string",
+        "length": 12
+    },
+    {
+        "name": "MartialStatus",
+        "level": "nominal",
+        "type": "string",
+        "length": 21
+    },
+    {
+        "name": "Relationship",
+        "level": "nominal",
+        "type": "string",
+        "length": 14
+    },
+    {
+        "name": "Race",
+        "level": "nominal",
+        "type": "string",
+        "length": 18
+    },
+    {
+        "name": "Sex",
+        "level": "nominal",
+        "type": "string",
+        "length": 6
+    },
+    {
+        "name": "HoursPerWeek",
+        "level": "interval",
+        "type": "decimal",
+        "length": 8
+    }
+]

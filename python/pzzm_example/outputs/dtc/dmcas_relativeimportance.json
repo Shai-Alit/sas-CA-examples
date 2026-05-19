@@ -1,0 +1,149 @@
+{
+    "creationTimeStamp": "0001-01-01T00:00:00Z",
+    "modifiedTimeStamp": "0001-01-01T00:00:00Z",
+    "revision": 0,
+    "name": "dmcas_relativeimportance",
+    "version": 0,
+    "order": 0,
+    "parameterMap": {
+        "LABEL": {
+            "label": "Variable Label",
+            "length": 256,
+            "order": 1,
+            "parameter": "LABEL",
+            "preformatted": false,
+            "type": "char",
+            "values": [
+                "LABEL"
+            ]
+        },
+        "LEVEL": {
+            "label": "Variable Level",
+            "length": 10,
+            "order": 5,
+            "parameter": "LEVEL",
+            "preformatted": false,
+            "type": "char",
+            "values": [
+                "LEVEL"
+            ]
+        },
+        "ROLE": {
+            "label": "Role",
+            "length": 32,
+            "order": 4,
+            "parameter": "ROLE",
+            "preformatted": false,
+            "type": "char",
+            "values": [
+                "ROLE"
+            ]
+        },
+        "RelativeImportance": {
+            "label": "Relative Importance",
+            "length": 8,
+            "order": 3,
+            "parameter": "RelativeImportance",
+            "preformatted": false,
+            "type": "num",
+            "values": [
+                "RelativeImportance"
+            ]
+        },
+        "Variable": {
+            "label": "Variable Name",
+            "length": 255,
+            "order": 2,
+            "parameter": "Variable",
+            "preformatted": false,
+            "type": "char",
+            "values": [
+                "Variable"
+            ]
+        }
+    },
+    "data": [
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "NOMINAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "1.0",
+                "Variable": "Education"
+            },
+            "rowNumber": 1
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "NOMINAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.29003042232751",
+                "Variable": "MartialStatus"
+            },
+            "rowNumber": 2
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "NOMINAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.2877385149816",
+                "Variable": "Relationship"
+            },
+            "rowNumber": 3
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "INTERVAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.12476152600022",
+                "Variable": "HoursPerWeek"
+            },
+            "rowNumber": 4
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "INTERVAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.10406292639114",
+                "Variable": "Age"
+            },
+            "rowNumber": 5
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "NOMINAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.05853139357166",
+                "Variable": "Sex"
+            },
+            "rowNumber": 6
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "NOMINAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.05534071965489",
+                "Variable": "WorkClass"
+            },
+            "rowNumber": 7
+        },
+        {
+            "dataMap": {
+                "LABEL": "",
+                "LEVEL": "NOMINAL",
+                "ROLE": "INPUT",
+                "RelativeImportance": "0.01978346078703",
+                "Variable": "Race"
+            },
+            "rowNumber": 8
+        }
+    ],
+    "xInteger": false,
+    "yInteger": false
+}
