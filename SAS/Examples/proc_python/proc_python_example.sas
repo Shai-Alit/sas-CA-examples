@@ -6,7 +6,8 @@ sean.ford@sas.com
 
 */
 
-*%let userid = &SYSUSERID;
+*use automatic variable SYSUSERID to get user currently logged in;
+%put SAS code running for &SYSUSERID;
 
 *get the user's home directory;
 %let user_home = %SYSGET(HOME);
@@ -24,6 +25,7 @@ submit;
 #import the pandas package
 import pandas as pd
 
+print(f"Running python code inside SAS Code for user {SAS.symget('SYSUSERID')}")
 print(f"The user's home directory is: {SAS.symget('user_home')}")
 
 #use SAS to get connected snowflake library data
