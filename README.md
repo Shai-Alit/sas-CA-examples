@@ -18,25 +18,40 @@ This repository contains code samples, Jupyter notebooks, SAS programs, and SAS 
 
 Perfect for developers, data scientists, and SAS users exploring modern SAS Viya workflows.
 
+
 ## 📁 Repository Structure
 
+```bash
 sas-CA-examples/
-├── Data/                  # Sample datasets
-├── Flows/                 # SAS Studio Flow files (.flw)
+├── Data/                          # Sample datasets used in examples
+├── Flows/                         # SAS Studio Flow files
 │   ├── python_plus_sas.flw
-│   └── python_plus_sas2.flw
+│   ├── python_plus_sas2.flw
+│   └── py_program.py
 ├── SAS/
-│   ├── Examples/          # Various SAS procedure and technique demos
-│   └── useful_macros/     # Reusable SAS macros
+│   ├── Examples/                  # Individual SAS technique demos
+│   │   ├── plotting_distributions/
+│   │   ├── proc_http/
+│   │   ├── proc_python/
+│   │   ├── reliability_example_w_data/
+│   │   └── transistor_demo_w_data/
+│   └── useful_macros/             # Reusable SAS macros
 ├── python/
-│   ├── swat_example.py
 │   ├── build_XGB.py
-│   ├── saspy_example/     # saspy integration notebooks
-│   └── pzmm_example/      # Model management with Python Model Manager
-├── models/baseball/       # Trained models (XGBoost + preprocessing artifacts)
-├── wb_startup/            # Workbench startup scripts
-└── _setup/                # Environment and setup files
-
+│   ├── swat_example.py
+│   ├── pzmm_example/              # Python Model Manager workflows
+│   └── saspy_example/             # saspy integration examples
+├── models/
+│   └── baseball/                  # Pre-trained XGBoost model + artifacts
+│       ├── XGBmodel.pickle
+│       ├── scaler.pkl
+│       └── encoder.pkl
+├── _setup/                        # Connection scripts and environment setup
+├── wb_startup/                    # SAS Workbench startup scripts
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
 ## 🚀 Quick Start
 

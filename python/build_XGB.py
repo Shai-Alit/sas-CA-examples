@@ -16,9 +16,9 @@ if 'viya' in os.getcwd():
 
     df = SAS.sd2df(input_table) #if running in Viya
 else:
-    input_table = './Data/baseball.csv'
+    input_table = '../Data/baseball.csv'
 
-    pickle_loc = './models/baseball'
+    pickle_loc = '../models/baseball'
 
     df = pd.read_csv(input_table)
 
